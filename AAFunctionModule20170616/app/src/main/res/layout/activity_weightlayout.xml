@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical">
+
+    <com.aaagame.module.widget.AppTitleBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:aa_bar_title="Weight用法" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            style="@style/et_tv"
+            android:layout_width="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1" />
+
+        <Button
+            style="@style/btn16"
+            android:text="提交" />
+    </LinearLayout>
+</LinearLayout>

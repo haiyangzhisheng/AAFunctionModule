@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgray"
+    android:orientation="vertical">
+
+    <com.aaagame.module.widget.AppTitleBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:aa_bar_title="选择地址" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/llMLMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="100dp">
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/mMapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btMapZoomIn"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bd_selector_bt_map_jia" />
+
+                    <Button
+                        android:id="@+id/btMapZoomOut"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bd_selector_bt_map_jian" />
+
+                    <ImageButton
+                        android:id="@+id/ibMLLocate"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:src="@drawable/bd_selector_ib_locate" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llLocationTipMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvShowLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:textColor="@color/app_white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/ivLocationTip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-6dp"
+                            android:src="@drawable/bd_now_loc" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"></LinearLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/app_bg"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:id="@+id/ivMLPLoading"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bd_loading_poi"
+                        android:visibility="gone" />
+
+                    <ListView
+                        android:id="@+id/lvPoiList"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:cacheColorHint="@color/app_transparent"
+                        android:dividerHeight="2px"
+                        android:fastScrollEnabled="true"
+                        android:scrollbars="none"
+                        android:scrollingCache="false"
+                        android:visibility="gone"></ListView>
+                </FrameLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/etMLCityPoi"
+            style="@style/tv15"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_rect_radius_grey_alert"
+            android:drawableLeft="@drawable/bd_search_icon"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="搜索"
+            android:lines="1"
+            android:padding="5dp" />
+
+        <ListView
+            android:id="@+id/lvMLCityPoi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/etMLCityPoi"
+            android:layout_margin="5dp"
+            android:cacheColorHint="@color/app_transparent"
+            android:dividerHeight="2dp"
+            android:fastScrollEnabled="true"
+            android:listSelector="@color/app_transparent"
+            android:scrollbars="none"
+            android:scrollingCache="false"
+            android:visibility="gone"></ListView>
+    </RelativeLayout>
+
+</LinearLayout>
